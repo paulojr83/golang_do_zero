@@ -5,11 +5,11 @@ import (
 	"math"
 )
 
-type forma interface {
+type Forma interface {
 	area() float64
 }
 
-func escreverArea(f forma)  {
+func escreverArea(f Forma)  {
 	fmt.Printf("A área da forma é %.2f\n", f.area())
 }
 
