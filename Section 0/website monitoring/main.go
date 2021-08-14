@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "os"
+import "net/http"
 
 func main() {
 
@@ -27,6 +28,14 @@ func main() {
 
 func iniciarMonitoramento(){
 	fmt.Println("Iniciar Monitoramento...")
+	site := "https://www.alura.com.br"
+	resp, _ := http.Get(site)
+	if resp.StatusCode == 200 {
+		fmt.Println(resp.Status)
+	}else {
+		fmt.Printf("O site %s está offline", site)
+	}
+
 }
 func exibirIntruducao() {
 	var nome string
